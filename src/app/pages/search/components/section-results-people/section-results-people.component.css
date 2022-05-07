@@ -1,104 +1,45 @@
-.container-foto-universidad {
-  border-radius: 5px;
-  /* // max-width: 1000px; */
-  margin: 0 auto;
+
+.card-datos-personales{
+  margin: 20px;
+    /* border: solid 1px; */
+    max-height: 316px;
 }
 
-.container-foto-universidad-mobile {
-  border-radius: 5px;
-  max-width: 100%;
-  /* // margin: 15px auto; */
+.card-informes{
+  margin: 20px 20px 20px 0px;
+    /* border: solid 1px; */
+}
+.card-contrataciones{
+  margin: 20px;
+    /* border: solid 1px; */
+}
+.card-afiliacion{
+  margin: 20px;
+    /* border: solid 1px; */
 }
 
-.img-foto-universidad {
-  width: 70%;
-  /* // height: 250px;
-  // max-height: 250px; */
-  margin: 0;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+.title{
+  margin-bottom: 15px;
+    margin-top: 10px;
+    border-bottom: solid 1px;
+    font-weight: 500;
+}
+.subtitle{
+  font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.text-p{
+  margin-top: 0px;
+    color: #e93e34;
+    font-weight: 500;
+    margin-bottom: 0px;
 }
 
-.container-sede-principal {
-  width: 30%;
-  /* // height: 250px; */
-  padding: 25px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+.fuente{
+  margin-top:20px;
 }
 
-.sede-principal-descripcion {
-  /* // font-size: 0.7rem; */
-}
-
-.section-datos-principales {}
-
-.container-info-programas,
-.container-info-ranking {
-  padding: 25px;
-}
-
-.container-cantidad-programas {
-  font-size: 1.7rem;
-}
-
-.titulo-datos-generales {
-  /* // border-bottom: solid 1px #ebebeb; */
-  margin-bottom: 10px;
-}
-
-.card-datos-principales,
-.card-servicios-complementarios {
-  /* // font-size: 0.75rem; */
-}
-
-/* // mobile classes */
-
-.img-foto-universidad-mobile {
-  width: 100%;
-  margin: 0;
-}
-
-.container-sede-principal-mobile {
-  width: 100%;
-  padding: 25px 50px;
-}
-
-.universidad-info-detalle {
-  font-size: 0.75rem;
-  margin: 10px 10px;
-/* 
-  & mat-icon {
-      font-size: 0.9rem;
-      height: 0.9rem;
-      width: 0.9rem;
-  } */
-
-  /* &.mobile-design {
-      margin: 10px 0px;
-  } */
-}
-
-.box-datos {
-  min-height: 250px;
-}
-
-.content-tipo-programa {
-  padding-bottom: 5px;
-  border-bottom: solid 1px #fff;
-}
-
-.icon-punto {
-  font-size: 12px;
-  width: 12px;
-  height: 12px;
-  margin-top: 2px;
-}
-
-.box-cantidad-programa {
-  border: solid 1px #fff;
-}
-
-.div-servicio-complementario {
-  word-wrap: break-word;
+.bg-azul {
+  margin: 45px 20px 20px 0px;
 }

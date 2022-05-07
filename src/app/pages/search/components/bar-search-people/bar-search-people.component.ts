@@ -23,14 +23,14 @@ export class BarSearchPeopleComponent implements OnInit {
   search = () => {
     let valor = (document.getElementById("txt-search") as HTMLInputElement).value
     this.listResult = [];
-    let temp = this.dataService.data.filter((x: any)=>x.nombre.toUpperCase().includes(valor.toUpperCase()) || x.dni.includes(valor));
+    let temp = this.dataService.data.filter((x: any)=>x.nombre_apellido.toUpperCase().includes(valor.toUpperCase()) || x.numero_documento.includes(valor));
     temp.forEach((y: any) => {
      this.listResult.push(y);
     });
   };
 
-  goDetalle = (dni:string,item:any) => {
+  goDetalle = (numero_documento:string,item:any) => {
     sessionStorage.setItem("funcionario", item);
-    this.route.navigateByUrl("search/"+dni);   
+    this.route.navigateByUrl("search/"+numero_documento);   
   }
 }

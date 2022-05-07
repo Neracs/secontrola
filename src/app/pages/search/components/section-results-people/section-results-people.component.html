@@ -1,108 +1,178 @@
-  <div
-    ngClass.gt-sm="container-foto-universidad mat-elevation-z1 m-l-20 m-r-20"
-    ngClass.lt-md="container-foto-universidad-mobile mat-elevation-z1 m-b-20"
-    fxLayout="row"
-    fxLayout.lt-md="column-reverse"
-    fxLayoutAlign="center">
-    <div
-      fxHide.lt-md
-      fxLayout="column"
-      class="bg-blanco-sunedu"
-      ngClass="container-sede-principal"
-      ngClass.lt-md="container-sede-principal-mobile">
-      <div class="text-azul-sunedu tuni-box-title-1 font-bold m-b-10">Datos principales</div>
-
-      <div
-        class="m-t-5"
-        fxLayout="row"
-        fxLayoutAlign="flex-start flex-start">
-        <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
-        <div>
-          <div class="font-bold">NOMBRE COMPLETO</div>
-          <div>{{funcionario.nombre}}</div>
-        </div>
+<div class="row">
+  <div class="col-md" style="margin-left: 5em;">
+    <div class="row">
+      <div class="card-datos-personales col-md">
+        <p class="title">Datos Personales</p>
+        <p class="subtitle">Nombre de la persona</p>
+        <p class="text-p">{{funcionario.nombre_apellido}}</p>
+        <p class="subtitle">Documento de identidad</p>
+        <p class="text-p">{{funcionario.numero_documento}}</p>
+        <p class="subtitle">Región / Prov. / Distrito</p>
+        <p class="text-p">{{funcionario.departamento}} / {{funcionario.provincia}} / {{funcionario.distrito}}</p>
       </div>
-
-      <div
-        class="m-t-5"
-        fxLayout="row"
-        fxLayoutAlign="flex-start flex-start">
-        <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
-        <div>
-          <div class="font-bold">Documento de Identidad</div>
-          <div>{{funcionario.dni}}</div>
-        </div>
+      <div class="card-informes col-md">
+        <p class="title">Informes de Control CGR</p>
+        <p class="subtitle">Código de Informe</p>
+        <p class="text-p">{{funcionario.n_informe}}</p>
+        <p class="subtitle">Entidad sujeta a control</p>
+        <p class="text-p">{{funcionario.entidad_sujeto_a_control}}</p>
+        <p class="subtitle">Tipo de Evento</p>
+        <p class="text-p">{{funcionario.evento}}</p>
+        <p class="subtitle">Tipo Responsabilidad</p>
+        <p class="text-p">{{funcionario.tipo_responsabilidad}}</p>
+        <p class="fuente">Fuente: Contraloría General de la República</p>
       </div>
-
-      <div
-        class="m-t-5"
-        fxLayout="row"
-        fxLayoutAlign="flex-start flex-start">
-        <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
-        <div>
-          <div class="font-bold">Contrataciones OSCE</div>
-          <div>
-            {{funcionario.unidad_que_emite}}
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="m-t-5"
-        fxLayout="row"
-        fxLayoutAlign="flex-start flex-start">
-        <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
-        <div>
-          <div class="font-bold">Afiliación JNE</div>
-          <div>{{funcionario.tipo_responsabilidad}}</div>
-        </div>
-      </div>
-
-      <div
-        class="m-t-5"
-        fxLayout="row"
-        fxLayoutAlign="flex-start flex-start">
-        <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
-        <div>
-          <div class="font-bold">Partido Político o movimiento regional</div>
-          <div>{{funcionario.operativo}}</div>
-        </div>
-      </div>
-
     </div>
-    <!-- <img
+ 
+  <div class="row">
+    <div class="col-md">
+    </div>
+    <div class="card-contrataciones col-md">
+      <p class="title">Contrataciones - OSCE</p>
+      <p class="subtitle">Miembro de Comité de Selección</p>
+        <p class="text-p">{{funcionario.miembro_comite_osce}}</p>
+        <p class="subtitle">Provedor de Estado RNP</p>
+        <p class="text-p">{{funcionario.entidad_sujeto_a_control}}</p>
+        <p class="subtitle">Tipo de Evento</p>
+        <p class="text-p">{{funcionario.proveedor}}</p>
+        <p class="fuente">Fuente: OSCE</p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md">
+    </div>
+    <div class="card-afiliacion col-md">
+      <p class="title">Afilicación Política - JNE</p>
+      <p class="subtitle">Tiene afiliación política</p>
+      <p class="text-p">{{funcionario.afiliado_mp}}</p>
+      <p class="subtitle">Partido político o movimiento regional</p>
+      <p class="text-p">{{funcionario.partido}}</p>
+      <p class="fuente">Fuente: Jurado Nacional de Elecciones - JNE</p>
+    </div>
+  </div>
+</div>
+  <div class="col-md"  style="padding-top: 33px;">
+    <a
+        class="bg-azul"
+        mat-raised-button
+        [href]="funcionario.url_informe"
+        target="_blank"
+      >
+        <!-- <mat-icon class="m-l-5 m-r-5">public</mat-icon> -->
+        Informe
+      </a>
+      <a
+        class="bg-azul"
+        mat-raised-button
+        [href]="funcionario.url_ficharesumen"
+        target="_blank"
+      >
+        <!-- <mat-icon class="m-l-5 m-r-5">public</mat-icon> -->
+        Ficha Resumen
+      </a>
+    <iframe [src]="funcionario.url_informe" style="width:100%; height:700px;"></iframe>   
+    <iframe [src]="funcionario.url_ficha_resumen" style="width:100%; height:700px;"></iframe>     
+  </div>
+</div>
+<div
+  *ngIf="false"
+  ngClass.gt-sm="container-foto-universidad mat-elevation-z1 m-l-20 m-r-20"
+  ngClass.lt-md="container-foto-universidad-mobile mat-elevation-z1 m-b-20"
+  fxLayout="row"
+  fxLayout.lt-md="column-reverse"
+  fxLayoutAlign="center"
+>
+  <div
+    fxHide.lt-md
+    fxLayout="column"
+    class="bg-blanco-sunedu"
+    ngClass="container-sede-principal"
+    ngClass.lt-md="container-sede-principal-mobile"
+  >
+    <div class="text-azul-sunedu tuni-box-title-1 font-bold m-b-10">
+      Datos principales
+    </div>
+
+    <div class="m-t-5" fxLayout="row" fxLayoutAlign="flex-start flex-start">
+      <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
+      <div>
+        <div class="font-bold">NOMBRE COMPLETO</div>
+        <div>{{ funcionario.nombre_apellido }}</div>
+      </div>
+    </div>
+
+    <div class="m-t-5" fxLayout="row" fxLayoutAlign="flex-start flex-start">
+      <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
+      <div>
+        <div class="font-bold">Documento de Identidad</div>
+        <div>{{ funcionario.numero_documento }}</div>
+      </div>
+    </div>
+
+    <div class="m-t-5" fxLayout="row" fxLayoutAlign="flex-start flex-start">
+      <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
+      <div>
+        <div class="font-bold">Contrataciones OSCE</div>
+        <div>
+          {{ funcionario.unidad_que_emite }}
+        </div>
+      </div>
+    </div>
+
+    <div class="m-t-5" fxLayout="row" fxLayoutAlign="flex-start flex-start">
+      <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
+      <div>
+        <div class="font-bold">Afiliación JNE</div>
+        <div>{{ funcionario.tipo_responsabilidad }}</div>
+      </div>
+    </div>
+
+    <div class="m-t-5" fxLayout="row" fxLayoutAlign="flex-start flex-start">
+      <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
+      <div>
+        <div class="font-bold">Partido Político o movimiento regional</div>
+        <div>{{ funcionario.operativo }}</div>
+      </div>
+    </div>
+  </div>
+  <!-- <img
       ngClass="img-foto-universidad"
       ngClass.lt-md="img-foto-universidad-mobile"
       [src]="state.urlImagenes+state.universidad.rutaFoto+state.universidad.archivoFoto"> -->
-  </div>
+</div>
 
-  <div
-    class="section-datos-principales m-r-15 m-l-15 m-t-25"
-    fxLayout="row"
-    fxLayout.lt-md="column">
-
+<div
+  class="section-datos-principales m-r-15 m-l-15 m-t-25"
+  fxLayout="row"
+  fxLayout.lt-md="column"
+  *ngIf="false"
+>
+  <div fxFlex="33.3%" fxFlex.sm="50%" fxFlex.xs="100%">
     <div
-      fxFlex="33.3%"
-      fxFlex.sm="50%"
-      fxFlex.xs="100%">
+      class="m-l-5 m-r-5 m-b-15 card-datos-principales box-datos p-25 fullheight"
+      fxLayout="column"
+      fxLayoutAlign="flex-start flex-start"
+    >
       <div
-        class="m-l-5 m-r-5 m-b-15 card-datos-principales box-datos p-25 fullheight"
-        fxLayout="column"
-        fxLayoutAlign="flex-start flex-start">
+        class="font-bold titulo-datos-generales text-azul-sunedu tuni-box-title-1 p-b-5"
+      >
+        Informes de Control CGR
+      </div>
 
-        <div class="font-bold titulo-datos-generales text-azul-sunedu tuni-box-title-1 p-b-5">Informes de Control CGR</div>
-
-        <div class="m-b-15">
-          <div class="font-bold m-r-5">Código de Informe principal</div>
-          <div>
-            <div class="sede-principal-descripcion">{{funcionario.n_informe}}</div>
-            <div class="sede-principal-descripcion">
-              {{funcionario.region}}/{{funcionario.ubigeo}}
-            </div>
+      <div class="m-b-15">
+        <div class="font-bold m-r-5">Código de Informe principal</div>
+        <div>
+          <div class="sede-principal-descripcion">
+            {{ funcionario.n_informe }}
+          </div>
+          <div class="sede-principal-descripcion">
+            {{ funcionario.region }}/{{ funcionario.ubigeo }}
           </div>
         </div>
+      </div>
 
-        <!-- <div
+      <!-- <div
           *ngIf="state.universidad.telefono"
           class="m-b-15">
           <div class="font-bold m-r-5">Teléfono</div>
@@ -122,32 +192,29 @@
           </div>
         </div> -->
 
-        <a
-          class="bg-azul-sunedu"
-          mat-raised-button
-          [href]="funcionario.url_informe"
-          target="_blank">
-          <!-- <mat-icon class="m-l-5 m-r-5">public</mat-icon> -->
-          Informe
-        </a>
-        <a
+      <a
+        class="bg-azul-sunedu"
+        mat-raised-button
+        [href]="funcionario.url_informe"
+        target="_blank"
+      >
+        <!-- <mat-icon class="m-l-5 m-r-5">public</mat-icon> -->
+        Informe
+      </a>
+      <a
         class="bg-azul-sunedu"
         mat-raised-button
         [href]="funcionario.url_ficharesumen"
-        target="_blank">
+        target="_blank"
+      >
         <!-- <mat-icon class="m-l-5 m-r-5">public</mat-icon> -->
         Ficha Resumen
       </a>
-
     </div>
-    </div>
+  </div>
 
-    <div
-      fxFlex="33.3%"
-      fxFlex.sm="50%"
-      fxFlex.xs="100%">
-
-      <!-- <mat-card
+  <div fxFlex="33.3%" fxFlex.sm="50%" fxFlex.xs="100%">
+    <!-- <mat-card
         class="m-l-5 m-r-5 m-b-15 card-datos-principales box-datos p-25 fullheight"
         fxLayout="column"
         fxLayoutAlign="flex-start flex-start">
@@ -229,9 +296,5 @@
         </div>
 
       </mat-card> -->
-
-    </div>
-
-    
-
   </div>
+</div>

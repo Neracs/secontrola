@@ -16,7 +16,7 @@ export class SectionResultsPeopleComponent implements OnInit {
   ngOnInit(): void {
     this.urlDNI = this.route.url;
     this.data =  this.dataService.data;
-    this.funcionario = this.data.find((x:any)=>x.dni==this.urlDNI.replace("/search/",""));
+    this.funcionario = this.data.find((x:any)=>x.numero_documento==this.urlDNI.replace("/search/",""));
   }
 
 }
