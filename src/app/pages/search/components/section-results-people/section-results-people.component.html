@@ -1,1 +1,237 @@
-<p>section-results-people works!</p>
+  <div
+    ngClass.gt-sm="container-foto-universidad mat-elevation-z1 m-l-20 m-r-20"
+    ngClass.lt-md="container-foto-universidad-mobile mat-elevation-z1 m-b-20"
+    fxLayout="row"
+    fxLayout.lt-md="column-reverse"
+    fxLayoutAlign="center">
+    <div
+      fxHide.lt-md
+      fxLayout="column"
+      class="bg-blanco-sunedu"
+      ngClass="container-sede-principal"
+      ngClass.lt-md="container-sede-principal-mobile">
+      <div class="text-azul-sunedu tuni-box-title-1 font-bold m-b-10">Datos principales</div>
+
+      <div
+        class="m-t-5"
+        fxLayout="row"
+        fxLayoutAlign="flex-start flex-start">
+        <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
+        <div>
+          <div class="font-bold">NOMBRE COMPLETO</div>
+          <div>{{funcionario.nombre}}</div>
+        </div>
+      </div>
+
+      <div
+        class="m-t-5"
+        fxLayout="row"
+        fxLayoutAlign="flex-start flex-start">
+        <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
+        <div>
+          <div class="font-bold">Documento de Identidad</div>
+          <div>{{funcionario.dni}}</div>
+        </div>
+      </div>
+
+      <div
+        class="m-t-5"
+        fxLayout="row"
+        fxLayoutAlign="flex-start flex-start">
+        <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
+        <div>
+          <div class="font-bold">Contrataciones OSCE</div>
+          <div>
+            {{funcionario.unidad_que_emite}}
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="m-t-5"
+        fxLayout="row"
+        fxLayoutAlign="flex-start flex-start">
+        <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
+        <div>
+          <div class="font-bold">Afiliación JNE</div>
+          <div>{{funcionario.tipo_responsabilidad}}</div>
+        </div>
+      </div>
+
+      <div
+        class="m-t-5"
+        fxLayout="row"
+        fxLayoutAlign="flex-start flex-start">
+        <!-- <mat-icon class="text-azul-sunedu m-r-10 icon-punto">stop</mat-icon> -->
+        <div>
+          <div class="font-bold">Partido Político o movimiento regional</div>
+          <div>{{funcionario.operativo}}</div>
+        </div>
+      </div>
+
+    </div>
+    <!-- <img
+      ngClass="img-foto-universidad"
+      ngClass.lt-md="img-foto-universidad-mobile"
+      [src]="state.urlImagenes+state.universidad.rutaFoto+state.universidad.archivoFoto"> -->
+  </div>
+
+  <div
+    class="section-datos-principales m-r-15 m-l-15 m-t-25"
+    fxLayout="row"
+    fxLayout.lt-md="column">
+
+    <div
+      fxFlex="33.3%"
+      fxFlex.sm="50%"
+      fxFlex.xs="100%">
+      <div
+        class="m-l-5 m-r-5 m-b-15 card-datos-principales box-datos p-25 fullheight"
+        fxLayout="column"
+        fxLayoutAlign="flex-start flex-start">
+
+        <div class="font-bold titulo-datos-generales text-azul-sunedu tuni-box-title-1 p-b-5">Informes de Control CGR</div>
+
+        <div class="m-b-15">
+          <div class="font-bold m-r-5">Código de Informe principal</div>
+          <div>
+            <div class="sede-principal-descripcion">{{funcionario.n_informe}}</div>
+            <div class="sede-principal-descripcion">
+              {{funcionario.region}}/{{funcionario.ubigeo}}
+            </div>
+          </div>
+        </div>
+
+        <!-- <div
+          *ngIf="state.universidad.telefono"
+          class="m-b-15">
+          <div class="font-bold m-r-5">Teléfono</div>
+          <div>
+            <div class="sede-principal-descripcion">{{state.universidad.telefono}}</div>
+          </div>
+        </div>
+
+        <div
+          *ngIf="state.universidad.correoInstitucional"
+          class="m-b-15">
+          <div class="font-bold m-r-5">Correo institucional</div>
+          <div>
+            <div class="sede-principal-descripcion">
+              {{state.universidad.correoInstitucional}}
+            </div>
+          </div>
+        </div> -->
+
+        <a
+          class="bg-azul-sunedu"
+          mat-raised-button
+          [href]="funcionario.url_informe"
+          target="_blank">
+          <!-- <mat-icon class="m-l-5 m-r-5">public</mat-icon> -->
+          Informe
+        </a>
+        <a
+        class="bg-azul-sunedu"
+        mat-raised-button
+        [href]="funcionario.url_ficharesumen"
+        target="_blank">
+        <!-- <mat-icon class="m-l-5 m-r-5">public</mat-icon> -->
+        Ficha Resumen
+      </a>
+
+    </div>
+    </div>
+
+    <div
+      fxFlex="33.3%"
+      fxFlex.sm="50%"
+      fxFlex.xs="100%">
+
+      <!-- <mat-card
+        class="m-l-5 m-r-5 m-b-15 card-datos-principales box-datos p-25 fullheight"
+        fxLayout="column"
+        fxLayoutAlign="flex-start flex-start">
+        <div class="font-bold titulo-datos-generales text-azul-sunedu tuni-box-title-1 p-b-5">Especificaciones</div>
+
+        <div fxLayout="row wrap">
+
+          <div
+            fxFlex="50%"
+            fxLayout="column"
+            fxLayoutAlign="center center"
+            class="bg-azul-sunedu p-25">
+            <div>
+              <span class="tuni-icono-lg tuni-icono-universidad-programas"></span>
+            </div>
+            <div class="text-center">Programas</div>
+          </div>
+
+          <div
+            class="p-15 bg-gray-sunedu box-cantidad-programa"
+            fxFlex="50%"
+            fxLayout="column"
+            fxLayoutAlign="center center">
+            <div class="container-cantidad-programas text-azul-sunedu m-b-5 font-bold">
+              {{
+                  state.universidad.cantidadCarreras+
+                  state.universidad.cantidadMaestrias+
+                  state.universidad.cantidadDoctorados+
+                  state.universidad.cantidadSegundaEspecialidad
+                }}
+            </div>
+            <div class="text-center text-azul-sunedu font-bold">Total</div>
+          </div>
+
+          <div
+            class="p-15 bg-gray-sunedu box-cantidad-programa"
+            *ngIf="state.universidad.cantidadCarreras&&state.universidad.cantidadCarreras!=0"
+            fxFlex="50%"
+            fxLayout="column"
+            fxLayoutAlign="flex-start center">
+            <div class="container-cantidad-programas text-azul-sunedu m-b-5 font-bold">{{state.universidad.cantidadCarreras}}</div>
+            <div class="text-center text-azul-sunedu font-bold">Carreras Profesionales</div>
+          </div>
+
+          <div
+            class="p-15 bg-gray-sunedu box-cantidad-programa"
+            *ngIf="state.universidad.cantidadMaestrias&&state.universidad.cantidadMaestrias!=0"
+            fxFlex="50%"
+            fxLayout="column"
+            fxLayoutAlign="flex-start center">
+            <div class="container-cantidad-programas text-azul-sunedu m-b-5 font-bold">{{state.universidad.cantidadMaestrias}}</div>
+            <div class="text-center text-azul-sunedu font-bold">Maestría(s)</div>
+          </div>
+
+          <div
+            class="p-15 bg-gray-sunedu box-cantidad-programa"
+            *ngIf="state.universidad.cantidadDoctorados&&state.universidad.cantidadDoctorados!=0"
+            fxFlex="50%"
+            fxLayout="column"
+            fxLayoutAlign="flex-start center">
+            <div class="container-cantidad-programas text-azul-sunedu m-b-5 font-bold">
+              {{state.universidad.cantidadDoctorados}}
+            </div>
+            <div class="text-center text-azul-sunedu font-bold">Doctorado(s)</div>
+          </div>
+
+          <div
+            class="p-15 bg-gray-sunedu box-cantidad-programa"
+            *ngIf="state.universidad.cantidadSegundaEspecialidad&&state.universidad.cantidadSegundaEspecialidad!=0"
+            fxFlex="50%"
+            fxLayout="column"
+            fxLayoutAlign="flex-start center">
+            <div class="container-cantidad-programas text-azul-sunedu m-b-5 font-bold">
+              {{state.universidad.cantidadSegundaEspecialidad}}
+            </div>
+            <div class="text-center text-azul-sunedu font-bold">Segunda especialidad</div>
+          </div>
+
+        </div>
+
+      </mat-card> -->
+
+    </div>
+
+    
+
+  </div>

@@ -4,7 +4,7 @@ import { SearchPeopleComponent } from './container/search-people/search-people.c
 import { SectionResultsPeopleComponent } from './components/section-results-people/section-results-people.component';
 const routes: Routes = [
   { path: '', component: SearchPeopleComponent },
-  { path: 'results', component: SectionResultsPeopleComponent},
+  { path: ':dni', component: SectionResultsPeopleComponent},
   { path: '**', redirectTo: 'search' }
 ];
 

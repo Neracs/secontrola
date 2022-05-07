@@ -1,0 +1,48 @@
+.container-result {
+  max-height: 320px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.section-input-search{
+  padding-left: 4px;
+    border: solid 1px;
+    height: 47px;
+    margin-left: 0px;
+    /* margin-right: -8px; */
+    max-width: 445px
+px
+;
+    padding-right: 0px;
+}
+.card-nombre {
+  margin-left: 15px;
+  /* border-top-left-radius: 8px; */
+  /* border-bottom-left-radius: 8px; */
+  border: solid #000000 1px;
+  min-height: 23px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+.card-dni {
+  border: solid #000000 1px;
+  min-height: 33px;
+  display: flex;
+  align-items: center;
+  border-left: none;
+  padding: 5px;
+  margin-bottom: 15px;
+  min-width: 140px;
+}
+
+.card-button {
+  /* border: solid #000000 2px; */ 
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  border-left: none;
+  /* padding: 5px; */
+  margin-bottom: 15px;
+  margin-right: 30px;
+}

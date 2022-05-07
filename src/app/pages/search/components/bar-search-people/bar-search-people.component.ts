@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DataService } from 'src/app/core/service/data.service';
+
 
 @Component({
   selector: 'app-bar-search-people',
@@ -7,9 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarSearchPeopleComponent implements OnInit {
 
-  constructor() { }
+    listResult: any[] = [];
+
+
+    
+  constructor(private route: Router, private dataService: DataService ) { }
 
   ngOnInit(): void {
   }
 
+  search = () => {
+    let valor = (document.getElementById("txt-search") as HTMLInputElement).value
+    this.listResult = [];
+    let temp = this.dataService.data.filter((x: any)=>x.nombre.toUpperCase().includes(valor.toUpperCase()) || x.dni.includes(valor));
+    temp.forEach((y: any) => {
+     this.listResult.push(y);
+    });
+  };
+
+  goDetalle = (dni:string,item:any) => {
+    sessionStorage.setItem("funcionario", item);
+    this.route.navigateByUrl("search/"+dni);   
+  }
 }
